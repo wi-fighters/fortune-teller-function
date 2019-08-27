@@ -1,1 +1,5 @@
+function tellFortune() {
+    
+}
+
 console.log();
