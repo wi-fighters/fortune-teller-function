@@ -20,3 +20,4 @@ function tellFortune(numberOfChildren, partnerName, geoLocation, jobTitle) {
 }
 
 console.log(tellFortune(5, 'partnerino', 'someplace', 'best job ever'));
+console.log(tellFortune(2, 'nobody', 'everywhere', 'work is for suckers'));
