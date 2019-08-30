@@ -1,4 +1,7 @@
 # How to navigate this repo
 
-Start at the beginning.
-Follow each commit in order to see how we built this function step by step.
+The commits on each file show how it was built and optimized, step by step.
+
+Start at the beginning, and take a look at the changes in each new commit.
+
+Think of how you can apply this process when you write and commit your own code.
