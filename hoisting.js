@@ -1,15 +1,29 @@
+// omitting unnecessary 'else' blocks makes your code more readable.
+// when you have a return statement in your 'if' block
+// it's best practice to not use an 'else' block
+// test yourself: try and explain why
+
 const wantMilk = true;
 
-console.log(getCoffee(wantMilk)); // wantMilk is true
+console.log(getCoffee(wantMilk));
 
-function getCoffee(milkOrder) { // milkOrder is equal to wantMilk which is true
+function getCoffee(milkOrder) {
 
-    if (!milkOrder) { // condition evaluates to false
+    // from this
+    // if (!milkOrder) {
+    //     return  `Here's your black coffee`;
+    // } else {
+    //     return  `Here's your flat white`;
+    // }
+
+    // to this
+    if (!milkOrder) {
         return  `Here's your black coffee`;
-    } else {
-        return  `Here's your flat white`;
     }
+    
+    return  `Here's your flat white`;
 }
+
 
 // Test your understanding of 'hoisting':
 // - can you explain why we can call getCoffee before we declare it?
