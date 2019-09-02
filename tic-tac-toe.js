@@ -6,12 +6,6 @@ const board = [
 
 const players = ['Juan', 'Marlon'];
 
-function printBoard() {
-    console.log(board[0]);
-    console.log(board[1]);
-    console.log(board[2]);
-}
-
 console.log('Before any moves, the board looks like this:\n');
 
 printBoard();
@@ -33,3 +27,11 @@ board[2][2] = 'x';
 console.log('Now the board looks like this:\n');
 
 printBoard();
+
+// Since func declarations are hoisted into memory before functions are called,
+// We are able to call printBoard() before declaring it
+function printBoard() {
+    console.log(board[0]);
+    console.log(board[1]);
+    console.log(board[2]);
+}
