@@ -9,8 +9,7 @@
 
 let stitches = '';
 
-// take the repeated thing, and put it in a block
-for (let i = 0; i < 5; i += 1) {
+for (let j = 0; j < 5; j += 1) {
     stitches += '-';
 }
 
