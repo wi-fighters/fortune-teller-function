@@ -7,11 +7,11 @@
 // The mini-goal:
 // -----
 
-let stitches = '';
+let stitches = ''; // '---'
 
 // take the repeated thing, and put it in a block
-{
-    stitches += '-';
+for (let i = 0; i < 5; i += 1) { // 2; true
+    stitches += '-'; // '--' + '-'
 }
 
 console.log(stitches);
