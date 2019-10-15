@@ -72,9 +72,7 @@ const quickSort = nums => {
 	}
 };
 
-
 // run the algorithms
-
 
 // a) what is the exact time now?
 const beforeBubbleSort = new Date();
@@ -82,27 +80,14 @@ const beforeBubbleSort = new Date();
 console.log('\nBubble sort');
 console.log(bubbleSort(unsortedArray));
 
-
 // b) what is the exact time now?
 const betweenSorts = new Date();
 
 console.log('\nQuick sort');
 console.log(quickSort(unsortedArray));
 
-
 // c) what is the exact time now?
 const afterQuickSort = new Date();
-
-// log the difference between b and a (how long did bubble sort take?)
-
-// log the difference between c and b (how long did quick sort take?)
-
-
-
-
-
-
-
 
 
 // log their stats
@@ -120,7 +105,6 @@ console.log(`
     with a total of ${quickSortStats.pushes} pushes.
 `);
 
-
 console.log('\nbefore bubble sort:\t', beforeBubbleSort);
 console.log('between sorts:\t\t', betweenSorts);
 console.log('after quick sort:\t', afterQuickSort);
@@ -128,7 +112,7 @@ console.log('after quick sort:\t', afterQuickSort);
 const bubbleSortTime = betweenSorts - beforeBubbleSort;
 const quickSortTime = afterQuickSort - betweenSorts;
 
-
+// comapare the execution times
 console.log('\nComparison of very specific implementations. Not necessarily true for all possible implementations of these algorithms.');
 
 console.log('bubble sort execution time:', bubbleSortTime / 1000, 'seconds');
