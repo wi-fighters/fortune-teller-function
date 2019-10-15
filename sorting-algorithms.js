@@ -6,20 +6,25 @@ for (let i = 0; i < 999; i++) {
     unsortedArray.push(Math.floor(Math.random() * 999));
 }
 
+// set up bubble sort and keep track of its stats
+const bubbleSortStats = {
+    inputLength: unsortedArray.length,
+    passes: 0,
+    comparisons: 0,
+};
+
 const bubbleSort = nums => {
     const sortedNums = nums;
-    let passes = 0;
-    let comparisons = 0;
     let swaps = 0;
     let temp = 0;
 
     // do as many passes as it takes for there to be no swaps
     do {
-        passes += 1;
+        bubbleSortStats.passes += 1;
         swaps = 0;
         // compare each element to its neighbor
         for(let j = 0; j < nums.length - 1; j++) {
-            comparisons += 1;
+            bubbleSortStats.comparisons += 1;
             // if they're not sorted (ascending), swap them
             if (nums[j] > nums[j + 1]) {
                 temp = nums[j + 1];
@@ -32,16 +37,12 @@ const bubbleSort = nums => {
         }
     } while (swaps > 0);
 
-    console.log(`
-        For an array of length: ${nums.length},
-        We did ${passes} passes
-        with a total of ${comparisons} comparisons.
-    `);
-
     return sortedNums;
 };
 
+// set up quick sort and keep track of its stats
 const quickSortStats = {
+    inputLength: unsortedArray.length,
     calls: 0,
     pushes: 0,
 };
@@ -71,11 +72,25 @@ const quickSort = nums => {
 	}
 };
 
-
-// console.log('\nBubble sort');
-// console.log(bubbleSort(unsortedArray));
+// run the algorithms
+console.log('\nBubble sort');
+console.log(bubbleSort(unsortedArray));
 
 console.log('\nQuick sort');
 console.log(quickSort(unsortedArray));
-console.log(`total calls: ${quickSortStats.calls}`);
-console.log(`total pushes into sub-arrays: ${quickSortStats.pushes}`);
+
+// log their stats
+console.log(`
+    Bubble sort:
+    For an array of length: ${bubbleSortStats.inputLength},
+    We did ${bubbleSortStats.passes} passes
+    with a total of ${bubbleSortStats.comparisons} comparisons.
+`);
+
+console.log(`
+    Quick sort:
+    For an array of length: ${quickSortStats.inputLength},
+    We did ${quickSortStats.calls} calls
+    with a total of ${quickSortStats.pushes} pushes.
+`);
+
