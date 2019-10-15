@@ -41,9 +41,13 @@ const bubbleSort = nums => {
     return sortedNums;
 };
 
-let pushes = 0;
+const quickSortStats = {
+    calls: 0,
+    pushes: 0,
+};
 
 const quickSort = nums => {
+    quickSortStats.calls += 1;
     if (nums.length <= 1) { 
 		return nums;
 	} else {
@@ -55,7 +59,7 @@ const quickSort = nums => {
 		const length = nums.length;
 
 		for (let i = 0; i < length; i++) {
-            pushes += 1;
+            quickSortStats.pushes += 1;
 			if (nums[i] <= pivot) {
 				left.push(nums[i]);
 			} else {
@@ -73,4 +77,5 @@ const quickSort = nums => {
 
 console.log('\nQuick sort');
 console.log(quickSort(unsortedArray));
-console.log(`total pushes into sub-arrays: ${pushes}`);
+console.log(`total calls: ${quickSortStats.calls}`);
+console.log(`total pushes into sub-arrays: ${quickSortStats.pushes}`);
