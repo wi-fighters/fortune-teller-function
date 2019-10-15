@@ -1,9 +1,9 @@
 // set up our test array
 const unsortedArray = [];
 
-for (let i = 0; i < 99; i++) {
+for (let i = 0; i < 999; i++) {
     // generate a random number and add it to unsortedArray
-    unsortedArray.push(Math.floor(Math.random() * 99));
+    unsortedArray.push(Math.floor(Math.random() * 999));
 }
 
 // set up bubble sort and keep track of its stats
@@ -85,6 +85,8 @@ console.log(bubbleSort(unsortedArray));
 
 
 // b) what is the exact time now?
+const afterBubbleSort = new Date();
+console.log(afterBubbleSort);
 
 console.log('\nQuick sort');
 console.log(quickSort(unsortedArray));
@@ -120,8 +122,11 @@ console.log(`
 `);
 
 
-// try some experiments on this new Date object
-console.log('beforeBubbleSort:', beforeBubbleSort);
-console.log('beforeBubbleSort * 1:', beforeBubbleSort * 1);
-console.log('typeof beforeBubbleSort:',typeof beforeBubbleSort);
-console.log('beforeBubbleSort instanceof Date:',beforeBubbleSort instanceof Date);
+console.log('\nbefore bubble sort:', beforeBubbleSort);
+console.log('after bubble sort: ', afterBubbleSort);
+
+const bubbleSortTime = afterBubbleSort - beforeBubbleSort;
+
+
+
+console.log('\nbubble sort time:', bubbleSortTime / 1000, 'seconds');
