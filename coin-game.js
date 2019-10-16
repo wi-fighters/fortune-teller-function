@@ -12,6 +12,9 @@ class Coin {
     }
 }
 
+const euro = new Coin('heads');
+console.log('euro.face:', euro.face);
+
 // blueprint for a player
 class Player {
     // score is an optional parameter
