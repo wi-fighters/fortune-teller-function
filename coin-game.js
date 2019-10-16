@@ -1,6 +1,6 @@
 // blueprint for a coin
 class Coin {
-    constructor(face) {
+    constructor(face = 'heads') {
         this.face = face;
     }
 
@@ -12,8 +12,10 @@ class Coin {
     }
 }
 
-const euro = new Coin('heads');
-console.log('euro.face:', euro.face);
+const euro = new Coin();
+console.log('euro.face before flip:', euro.face);
+euro.flip();
+console.log('euro.face after flip:', euro.face);
 
 // blueprint for a player
 class Player {
@@ -46,6 +48,6 @@ const blorpa = new Player('Blorpa');
 // console.log('Ada says hey: ');
 // ada.sayHey();
 
-console.log('Charles says hey: ');
-charles.sayHey();
-console.log(`omg ${charles.name} cheated at the coin game with ${charles.score} points!`);
+// console.log('Charles says hey: ');
+// charles.sayHey();
+// console.log(`omg ${charles.name} cheated at the coin game with ${charles.score} points!`);
