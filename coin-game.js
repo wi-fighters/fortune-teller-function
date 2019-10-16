@@ -12,11 +12,6 @@ class Coin {
     }
 }
 
-const euro = new Coin();
-console.log('euro.face before flip:', euro.face);
-euro.flip();
-console.log('euro.face after flip:', euro.face);
-
 // blueprint for a player
 class Player {
     // score is an optional parameter
@@ -35,19 +30,46 @@ class Player {
     }
 }
 
-// this is what a new instance of Player looks like... forgetting makeGuess for now
-// const ada = {
-//     name: 'Ada',
-//     score: 0,
-//     sayHey: function() { console.log('hey'); },
-// };
+// blueprint for a game
+class Game {
+ // if no coin is provided, create a brand new one right now
+    constructor(playerOne, playerTwo, coin = new Coin()) {
+        this.playerOne = playerOne;
+        this.playerTwo = playerTwo;
+        this.coin = coin;
+    }
 
+    announceWinner() {
+        if (this.coin.face === this.playerOne.guess) {
+            console.log(`${this.playerOne.name} wins!`);
+        } else {
+            console.log(`${this.playerTwo.name} wins!`);
+        }
+    }
+
+    play(player, face) {
+        player.makeGuess(face);
+        this.coin.flip();
+        this.announceWinner();
+    }
+
+}
+
+// instantiate (create) players
+const ada = new Player('Ada');
 const charles = new Player('Charles');
-const blorpa = new Player('Blorpa');
 
-// console.log('Ada says hey: ');
-// ada.sayHey();
+// optionally, instantiate (create) and provide your own coin
+// const euro = new Coin();
+// const someGame = new Game(ada, charles, euro);
 
-// console.log('Charles says hey: ');
-// charles.sayHey();
-// console.log(`omg ${charles.name} cheated at the coin game with ${charles.score} points!`);
+const someGame = new Game(ada, charles);
+someGame.play(ada, 'tails');
+
+
+// some coin tests in case you want to experiment
+// const dollar = new Coin();
+// euro.flip()
+// euro.face
+// dollar.flip()
+// dollar.face
